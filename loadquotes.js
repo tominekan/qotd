@@ -26,11 +26,23 @@ function generateHTML(quote) {
         </div>`;
 }
 
-// Go thru and fill out all the innerHTML objects
-let contentElement = document.getElementById("content");
-let innerText = "";
-for (let quote of quotes) {
-    innerText += generateHTML(quote)
+// Go thru and fill out all the quotes based on quotes.json
+function setAllQuotes(quotes) {
+    let contentElement = document.getElementById("content");
+    let innerText = "";
+    for (let quote of quotes) {
+        innerText += generateHTML(quote)
+    }
+
+    contentElement.innerHTML = innerText;
 }
 
-contentElement.innerHTML = innerText;
+fetch("quotes.json")
+      .then(response => response.json()) // Parse the response as JSON
+      .then(data => {
+        // Display the JSON data in the page
+        setAllQuotes(data)
+      })
+      .catch(error => {
+        console.error("Error loading JSON:", error);
+      });
