@@ -1,0 +1,85 @@
+.content {
+    font-family: "Montserrat", sans-serif;
+    color: white;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+.quote {
+    scroll-snap-align: start;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("PHILOSOPHERS/1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.quote::after {
+    height: 100vh;
+    width: 100vw;
+    display: inline-block;
+    display: relative;
+    background-color: rgba(0, 0, 0, 0.67);
+    z-index: 3;
+}
+
+.quote-content {
+    width: 75%;
+    z-index: 3;
+}
+
+.quote-content::before {
+    position: relative;
+    top: 0%;
+    content: "\201C";
+    font-family: sans-serif;
+    color: #8FBC9D;
+    font-size: 10rem;
+    font-weight: bolder;
+}
+
+/* Actual quote text */
+.quote-text {
+    font-size: 5rem;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.author {
+    font-size: 3rem;
+    text-align: right;
+    color: #8FBC9D;
+    font-weight: bold;
+}
+
+/* Handle images and overlays */
+.img-container {
+    height: 100vh;
+    width: 100vw;
+    display: inline-block;
+    background-image: url("PHILOSOPHERS/1.jpg");
+    background-repeat: no-repeat;
+    background-color: rgba(0, 0, 0, 0.67);
+    z-index: 2;
+}
+
+.img-container::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.67);
+}
+
+.quote-img {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+    z-index: -2;
+}
