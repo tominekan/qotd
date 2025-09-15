@@ -2,5 +2,6 @@
 My quote for the day.
 
 TODOS:
-- [ ] Make quote generation automatic using js
-- [ ] Properly setup background images
+- [x] Make quote generation automatic using js
+- [x] Properly setup background images
+- [] Automate workflow to automatically add quotes
