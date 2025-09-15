@@ -4,6 +4,18 @@
     scroll-snap-type: y mandatory;
     overflow-y: scroll;
     height: 100vh;
+    width: 100vw;
+}
+
+.content::after {
+    content: "";
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.67);
+    z-index: 2;
 }
 
 .quote {
@@ -18,14 +30,16 @@
     background-size: cover;
 }
 
-.quote::after {
+/* .quote::after {
+    content: "";
     height: 100vh;
     width: 100vw;
-    display: inline-block;
-    display: relative;
+    display: absolute;
+    top: 0px;
+    left: 0px;
     background-color: rgba(0, 0, 0, 0.67);
-    z-index: 3;
-}
+    z-index: 2;
+} */
 
 .quote-content {
     width: 75%;
@@ -54,32 +68,4 @@
     text-align: right;
     color: #8FBC9D;
     font-weight: bold;
-}
-
-/* Handle images and overlays */
-.img-container {
-    height: 100vh;
-    width: 100vw;
-    display: inline-block;
-    background-image: url("PHILOSOPHERS/1.jpg");
-    background-repeat: no-repeat;
-    background-color: rgba(0, 0, 0, 0.67);
-    z-index: 2;
-}
-
-.img-container::after {
-    content: "";
-    position: absolute;
-    height: 100%;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    background-color: rgba(0, 0, 0, 0.67);
-}
-
-.quote-img {
-    height: 100vh;
-    width: 100vw;
-    object-fit: cover;
-    z-index: -2;
 }
