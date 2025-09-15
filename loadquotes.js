@@ -41,7 +41,7 @@ fetch("quotes.json")
       .then(response => response.json()) // Parse the response as JSON
       .then(data => {
         // Display the JSON data in the page
-        setAllQuotes(data)
+        setAllQuotes(data.quotes)
       })
       .catch(error => {
         console.error("Error loading JSON:", error);
